@@ -28,10 +28,9 @@ html{
     top: 50%;
     left: 50%;
     transform: translate(-50% , -50%);
-
     height: 90vh;
-    width: 80vw;
-    min-width: 1000px;
+    width: 70vw;
+    min-width: 900px;
 }
 
 /* sezione di sinisra con chat list */
@@ -122,6 +121,8 @@ html{
 .search input{
     border: none;
     flex-grow: 1;
+    padding-left: 1rem;
+
 }
 
 .chat-list{
@@ -172,10 +173,102 @@ html{
 
 /* sezione di destra con chat  */
 
-
 .open-chat{
     background-color: white;
-    height: 100%;
-    flex-grow: 5;
-    overflow-Y: scroll;
+    flex-grow: 4;
+}
+
+.contact{
+    display: flex;
+    background-color: #eaeaea;
+    height: 4rem;
+    align-items: center;
+    border-left: 1px solid #b1b1b1;
+}
+
+.contact img{
+    height: 2.5rem;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+.info{
+    flex-grow: 1;
+}
+
+.info div{
+    font-size: .9rem;
+}
+
+.info p{
+    font-size: 0.7rem;
+    color: #b1b1b1;
+}
+
+.contact .fas{
+    margin: 0.4rem;
+    color: #b1b1b1;
+}
+
+.contact .fas:last-of-type{
+    margin: .4rem .7rem .4rem .4rem
+}
+
+.contact .fas:hover{
+    cursor: pointer;
+}
+
+.messages{
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 8rem);
+    background: url(../img/mine.jpg);
+    overflow-y: scroll;
+}
+
+.input-message{
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    background-color: #F2EEEA;
+}
+
+.input-message .far,
+.input-message .fas{
+    margin: 1rem 2rem;
+    color: #6D7376;
+}
+
+.input-message .far:hover,
+.input-message .fas:hover{
+    cursor: pointer;
+}
+
+.input-message input{
+    flex-grow: 1;
+    height: 2.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    padding-left: 1rem;
+}
+
+
+/* sezione messaggi */
+
+.sended{
+    width: 300px;
+    background-color:#DCF8C0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 3rem 3rem 0.5rem 0;
+    align-self: end;
+
+}
+
+.received{
+    width: 300px;
+    background-color: #F8F8F8;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 0.5rem 3rem;
 }

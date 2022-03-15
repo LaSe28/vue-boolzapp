@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.main-container{
+    position: relative;
+}
+
+.green-bar{
+    height: 7rem;
+    background-color: #429488;
+}
+
+.background{
+    background-color: #D7DBD9;
+    height: calc(100vh - 7rem);
+}
+
+.app-container{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+
+    height: 90vh;
+    width: 80vw;
+    min-width: 1000px;
+    background-color: grey;
+}
+
+/* sezione di sinisra con chat list */
+
+.left-sec{
+    background-color: lightgray;
+    height: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.my-profile-section{
+    height: 11rem;
+}
+
+.my-profile{
+    height: 4rem;
+    display: flex;
+    align-items: center;
+}
+
+.my-profile img{
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.notification-setting{
+    height: calc(5rem - 10px);
+    background-color: #9FD8F8;
+    display: flex;
+    align-items: center;
+
+}
+
+.notification-setting .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: #9FD8F8;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    margin: 1rem;
+}
+
+.notification-setting p{
+    font-size: 0.8rem;
+}
+
+.notification-setting p:last-of-type{
+    color: grey; 
+    text-decoration: underline;
+    font-size: 0.7rem;
+}
+
+.search{
+    height: 2.5rem;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    border: 5px solid #e8e8e8;
+}
+
+.search .fas{
+    padding: .5rem 1rem;
+    color: #b1b1b1;
+}
+
+.search input{
+    border: none;
+    flex-grow: 1;
+}
+
+.chat-list{
+    overflow-Y: scroll;
+    height: calc(100% - 11rem);
+}
+
+.list-item{
+    width: 100%;
+    height: 5rem;
+    background-color: red;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+
+/* sezione di destra con chat  */
+
+
+.open-chat{
+    background-color: white;
+    height: 100%;
+    flex-grow: 5;
+    overflow-Y: scroll;
+}

@@ -86,7 +86,7 @@ let app = new Vue({
             },
             {
                 contact : {
-                    name : 'Luca',
+                    name : 'Gianni',
                     img: 'avatar_3.jpg',
                 },
                 messages : [
@@ -105,7 +105,7 @@ let app = new Vue({
             },
             {
                 contact : {
-                    name : 'Andrea',
+                    name : 'Franco',
                     img: 'avatar_5.jpg',
                 },
                 messages : [

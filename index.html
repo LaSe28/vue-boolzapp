@@ -34,11 +34,11 @@
                     </div>
                     <div class="search">
                         <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat" >
+                        <input type="text" v-model="search" placeholder="Cerca o inizia una nuova chat" >
                     </div>
                 </div>
                 <div class="chat-list">
-                    <div v-for="(chat, index) in chats "@click="i = index" :class=" index == i ? 'active' : '' " class="list-item">
+                    <div v-for="(chat, index) in filteredChats "@click="i = index" :class=" index == i ? 'active' : '' " class="list-item">
                         <img :src="'img/' + chat.contact.img" alt="">
                         <div class="text-sec">
                             <div>{{chat.contact.name}}</div>

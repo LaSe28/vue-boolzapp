@@ -8,10 +8,6 @@ html{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
-.hidden{
-    display: none;
-}
-
 .main-container{
     position: relative;
 }
@@ -152,7 +148,7 @@ html{
 }
 
 .text-sec div{
-    margin-top: .8rem;
+    margin-top: .9rem;
 }
 
 .text-sec p{
@@ -166,7 +162,7 @@ html{
 
 .list-item .hour{
     position: absolute;
-    top: 0.5rem;
+    top: 0.3rem;
     right: 0.4rem;
     font-size: 0.6rem;
     color: #b1b1b1
@@ -292,4 +288,29 @@ html{
     right: .3rem;
     font-size: 0.6rem;
     color: #b1b1b1;
+}
+
+.messages .fas{
+    position: absolute;
+    top: .3rem;
+    right: .3rem;
+    display: none;
+}
+
+#message:hover .fas{
+    display: inline-block;
+}
+
+.dropdown-menu{
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    height: 70px;
+    width: 130px;
+    background-color: white;
+    visibility: hidden;
+}
+
+.showed{
+    visibility: visible;
 }

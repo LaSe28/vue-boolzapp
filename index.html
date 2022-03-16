@@ -38,13 +38,13 @@
                     </div>
                 </div>
                 <div class="chat-list">
-                    <div v-for="(element, index) in chats "@click="i = index" :class=" index == i ? 'active' : '' " class="list-item">
-                        <img :src="'img/' + element.contact.img" alt="">
+                    <div v-for="(chat, index) in chats "@click="i = index" :class=" index == i ? 'active' : '' " class="list-item">
+                        <img :src="'img/' + chat.contact.img" alt="">
                         <div class="text-sec">
-                            <div>{{element.contact.name}}</div>
-                            <p>Ultimo messaggio inviato</p>
+                            <div>{{chat.contact.name}}</div>
+                            <p>{{chat.messages[chat.messages.length - 1].text}}...</p>
                         </div>
-                        <div class="hour">12:00</div>
+                        <div class="hour">{{chat.messages.hour}}</div>
                     </div>
                 </div>
             </div>
@@ -56,21 +56,25 @@
                     <img :src="'img/' + chats[i].contact.img" alt="">
                     <div class="info">
                         <div>{{chats[i].contact.name}}</div>
-                        <p>ultimo accesso oggi alle 12:00</p>
+                        <p>ultimo accesso oggi alle </p>
                     </div>
                     <i class="fas fa-search"></i>
                     <i class="fas fa-paperclip"></i>
                     <i class="fas fa-ellipsis-v"></i>
                 </div>
                 <div class="messages">
-                    <div v-for="message in chats[i].messages" :class="message.sent == true ? 'sent' : 'received'">{{message.text}}
-                        <div class="hour">11:58</div>
+                    <div id="message" v-for="(message, index) in chats[i].messages" :class="message.sent == true ? 'sent' : 'received'">{{message.text}}
+                        <div class="hour"></div>
+                        <i @click="message.clicked = true " class="fas fa-chevron-down"></i>
+                        <div :class="message.clicked == true ? 'showed' : ''"class="dropdown-menu">
+                            <button @click="prova(index)" >Cancella messaggio</button>
+                        </div>
                     </div>
                 </div>
                 <div class="input-message">
                     <i class="far fa-smile"></i>
                     <input @keyup.enter="addMessage" v-model="newMessage.text" type="text" placeholder="Scrivi un messaggio" >
-                    <i class="fas fa-microphone"></i>
+                    <i  class="fas fa-microphone"></i>
                 </div>
             </div>
         </div>

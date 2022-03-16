@@ -67,7 +67,8 @@
                         <div class="hour"></div>
                         <i @click="message.clicked = true " class="fas fa-chevron-down"></i>
                         <div :class="message.clicked == true ? 'showed' : ''"class="dropdown-menu">
-                            <button @click="deleteMessage(index)" >Cancella messaggio</button>
+                            <div class="btn" @click="deleteMessage(index)" >Cancella messaggio</div>
+                            <div>Info messaggio</div>
                         </div>
                     </div>
                 </div>

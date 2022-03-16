@@ -302,15 +302,27 @@ html{
 }
 
 .dropdown-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     position: absolute;
     top: -1rem;
     right: -1rem;
-    height: 70px;
-    width: 130px;
+    height: 100px;
+    width: 200px;
     background-color: white;
     visibility: hidden;
 }
 
 .showed{
     visibility: visible;
+}
+
+.dropdown-menu div{
+    font-size: 0.8rem;
+    padding: 1rem;
+}
+
+.dropdown-menu div:hover{
+    background-color: #eaeaea;
 }

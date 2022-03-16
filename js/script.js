@@ -2,6 +2,7 @@ let app = new Vue({
     el : '#root',
     data: {
         i : 0,
+        arrAnsware : ['okok', 'si sto bene', 'che cosa hai bevuto?', 'mi fa piacere :)', 'ci vediamo domani!', 'non scrivermi mai più!'],
         newMessage : 
         {
             text : '',
@@ -200,11 +201,16 @@ let app = new Vue({
         addMessage(){
             if(this.newMessage != ''){
                 this.chats[this.i].messages.push(this.newMessage)
-                setTimeout(() => {this.chats[this.i].messages.push({text : 'ok',sent : false,hour: luxon.DateTime.now().toFormat('dd/MM/yyyy HH:mm')})}, 1000);}
-            this.newMessage = {text : '',sent : true,hour: luxon.DateTime.now().toFormat('dd/MM/yyyy HH:mm')}
+                setTimeout(() => {this.chats[this.i].messages.push({text : this.arrAnsware[this.randomAnsware()],sent : false, clicked : false,})}, 1000);}
+            this.newMessage = {text : '',sent : true, clicked : false,}
+            this.randomAnsware()
         },
-        prova(index){
-            console.log(index, 'ciao', this.chats[index].contact.name)
+        randomAnsware(){
+            let answare = Math.floor(Math.random()*6)+1
+            return answare
+        },
+        deleteMessage(index){
+            this.chats[this.i].messages.splice(index, 1)
         }
     }
 })

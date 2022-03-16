@@ -203,11 +203,11 @@ let app = new Vue({
                 this.chats[this.i].messages.push(this.newMessage)
                 setTimeout(() => {this.chats[this.i].messages.push({text : this.arrAnsware[this.randomAnsware()],sent : false, clicked : false,})}, 1000);}
             this.newMessage = {text : '',sent : true, clicked : false,}
-            this.randomAnsware()
         },
         randomAnsware(){
-            let answare = Math.floor(Math.random()*6)+1
+            let answare = Math.floor(Math.random()*5)+1
             return answare
+            console.log(answare)
         },
         deleteMessage(index){
             this.chats[this.i].messages.splice(index, 1)

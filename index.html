@@ -63,16 +63,16 @@
                     <i class="fas fa-ellipsis-v"></i>
                 </div>
                 <div class="messages">
-                    <div class="sent">{{chats[i].sent}}
+                    <div class="sent">{{chats[i].sent[0]}}
                         <div class="hour">11:58</div>
                     </div>
-                    <div class="received">{{chats[i].received}}
+                    <div class="received">{{chats[i].received[0]}}
                         <div class="hour">11:59</div>
                     </div>
-                    <div class="sent">{{chats[i].sent}}
+                    <div v-for="(mexS, index) in chats" class="sent">{{mexS[index].sent}}
                         <div class="hour">11:58</div>
                     </div>
-                    <div class="received">{{chats[i].received}}
+                    <div v-for="(mexR, index) in chats" class="received">{{}}
                         <div class="hour">11:59</div>
                     </div>
                 </div>

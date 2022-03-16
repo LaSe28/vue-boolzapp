@@ -39,9 +39,9 @@
                 </div>
                 <div class="chat-list">
                     <div v-for="(element, index) in chats "@click="i = index" :class=" index == i ? 'active' : '' " class="list-item">
-                        <img :src="'img/' + element.img" alt="">
+                        <img :src="'img/' + element.contact.img" alt="">
                         <div class="text-sec">
-                            <div>{{element.name}}</div>
+                            <div>{{element.contact.name}}</div>
                             <p>Ultimo messaggio inviato</p>
                         </div>
                         <div class="hour">12:00</div>
@@ -53,9 +53,9 @@
 
             <div class="open-chat">
                 <div class="contact">
-                    <img :src="'img/' + chats[i].img" alt="">
+                    <img :src="'img/' + chats[i].contact.img" alt="">
                     <div class="info">
-                        <div>{{chats[i].name}}</div>
+                        <div>{{chats[i].contact.name}}</div>
                         <p>ultimo accesso oggi alle 12:00</p>
                     </div>
                     <i class="fas fa-search"></i>
@@ -63,22 +63,13 @@
                     <i class="fas fa-ellipsis-v"></i>
                 </div>
                 <div class="messages">
-                    <div class="sent">{{chats[i].sent[0]}}
+                    <div v-for="message in chats[i].messages" :class="message.sent == true ? 'sent' : 'received'">{{message.text}}
                         <div class="hour">11:58</div>
-                    </div>
-                    <div class="received">{{chats[i].received[0]}}
-                        <div class="hour">11:59</div>
-                    </div>
-                    <div v-for="(mexS, index) in chats" class="sent">{{mexS[index].sent}}
-                        <div class="hour">11:58</div>
-                    </div>
-                    <div v-for="(mexR, index) in chats" class="received">{{}}
-                        <div class="hour">11:59</div>
                     </div>
                 </div>
                 <div class="input-message">
                     <i class="far fa-smile"></i>
-                    <input @keyup.enter="addMessage" v-model="newMessage" type="text" placeholder="Scrivi un messaggio" >
+                    <input @keyup.enter="addMessage" v-model="newMessage.text" type="text" placeholder="Scrivi un messaggio" >
                     <i class="fas fa-microphone"></i>
                 </div>
             </div>

@@ -2,65 +2,181 @@ let app = new Vue({
     el : '#root',
     data: {
         i : 0,
-        newMessage : '',
+        newMessage : 
+        {
+            text : '',
+            sent : true,
+        },
         chats : [
             {
-                name : 'Michele',
-                img: 'avatar_1.jpg',
-                sent : ['ciao'],
-                received:['ei ciao'],
+                contact : {
+                    name : 'Michele',
+                    img: 'avatar_1.jpg',
+                },
+                messages : [
+                    {
+                        text : 'ciao',
+                        sent : false,
+                    },
+                    {
+                        text : 'hai la macchina stasera?',
+                        sent : false,
+                    },
+                    {
+                        text : 'ti serve un passaggio?',
+                        sent : true,
+                    },
+                    {
+                        text : 'si',
+                        sent : false,
+                    },
+                    {
+                        text : 'allora no',
+                        sent : true,
+                    }
+                ],
+
             },
             {
-                name : 'Luca',
-                img: 'avatar_2.jpg',
-                sent : ['hola'],
-                received:['ei ciao'],
+                contact : {
+                    name : 'Mattia',
+                    img: 'avatar_2.jpg',
+                },
+                messages : [
+                    {
+                        text : 'Teleciamaragno chiama ragno, ragno rispondi',
+                        sent : true,
+                    },
+                    {
+                        text : 'sei ubriaco?',
+                        sent : false,
+                    }
+                ],
+
             },
             {
-                name : 'Marco',
-                img: 'avatar_3.jpg',
-                sent : ['ehi'],
-                received:['chi si risente'],
+                contact : {
+                    name : 'Marco',
+                    img: 'avatar_4.jpg',
+                },
+                messages : [
+                    {
+                        text : 'ei',
+                        sent : true,
+                    },
+                    {
+                        text : 'ciao dimmi',
+                        sent : false,
+                    }
+                ],
+
             },
             {
-                name : 'Mattia',
-                img: 'avatar_5.jpg',
-                sent : ['teleciamaragno chiama ragno, ragno rispondi'],
-                received:['sei ubriaco?'],
+                contact : {
+                    name : 'Luca',
+                    img: 'avatar_3.jpg',
+                },
+                messages : [
+                    {
+                        text : 'tutto bene?',
+                        sent : true,
+                    },
+                    {
+                        text : 'insomma',
+                        sent : false,
+                    }
+                ],
+
             },
             {
-                name : 'Andrea',
-                img: 'avatar_7.jpg',
-                sent : ['ciao'],
-                received:['ei ciao'],
+                contact : {
+                    name : 'Andrea',
+                    img: 'avatar_5.jpg',
+                },
+                messages : [
+                    {
+                        text : 'ciao',
+                        sent : true,
+                    },
+                    {
+                        text : 'come stai?',
+                        sent : false,
+                    },
+                    {
+                        text : 'abbastanza bene dai, tu?',
+                        sent : true,
+                    },
+                    {
+                        text : 'anche io grazie',
+                        sent : false,
+                    },
+                ],
+
             },
             {
-                name : 'Veronica',
-                img: 'avatar_6.jpg',
-                sent : ['ciao, come stai?'],
-                received:['ei ciao, abbastanza bene'],
+                contact : {
+                    name : 'Veronica',
+                    img: 'avatar_6.jpg',
+                },
+                messages : [
+                    {
+                        text : 'faccio un po di ritardo a lavoro',
+                        sent : false,
+                    },
+                    {
+                        text : 'strano',
+                        sent : true,
+                    }
+                ],
+
             },
             {
-                name : 'Stefano',
-                img: 'avatar_4.jpg',
-                sent : ['vieni a prende la moto con me?'],
-                received:['se finisco l\'esercizio in tempo si'],
+                contact : {
+                    name : '+39 3985258932',
+                    img: 'avatar_7.jpg',
+                },
+                messages : [
+                    {
+                        text : 'hola',
+                        sent : false,
+                    },
+                    {
+                        text : 'amigo',
+                        sent : false,
+                    },
+                    {
+                        text: 'chi sei?',
+                        sent: true
+                    }
+                ],
+
             },
             {
-                name : '+39 3403929521',
-                img: 'avatar_io.jpg',
-                sent : ['chi sei?'],
-                received:['ei ciao'],
+                contact : {
+                    name : 'Gregorio',
+                    img: 'avatar_io.jpg',
+                },
+                messages : [
+                    {
+                        text : 'ciao',
+                        sent : true,
+                    },
+                    {
+                        text : 'ehila',
+                        sent : false,
+                    }
+                ],
+
             },
+            
         ],
     },
     methods : {
         addMessage(){
             if(this.newMessage != ''){
-                this.chats[this.i].sent.push(this.newMessage)
-                setTimeout(() => {this.chats[this.i].received.push('ok')}, 1000);
-            }
-            this.newMessage = ''
+                this.chats[this.i].messages.push(this.newMessage)
+                setTimeout(() => {this.chats[this.i].messages.push({text : 'ok',sent : false,})}, 1000);}
+            this.newMessage = {text : '',sent : true}
         }
     }
 })

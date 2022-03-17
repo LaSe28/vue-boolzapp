@@ -9,16 +9,14 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
+<body id="root-dark" class="">
     <div id="root" class="main-container">
         <div class="green-bar"></div>
-        <div  :class="dark == true ? 'dark' : ''"class="background "></div>
-        <!-- qui -->
+        <div class="background"></div>
         <div class="app-container">
             <div class="left-sec">
                 <div class="my-profile-section">
-                    <div  :class="dark == true ? 'dark' : ''" class="my-profile ">
-                        <!-- qui -->
+                    <div class="my-profile">
                         <img :src="'img/' + mainUser.img" alt="">
                         <div>{{mainUser.name}}</div>
                         <i v-if="dark == false"@click="toggleDark()"class="fas fa-toggle-off"></i>
@@ -36,17 +34,13 @@
                             <p>Attiva notifiche desktop</p>
                         </div>
                     </div>
-                    <div  :class="dark == true ? 'dark' : ''"class="search ">
-                        <!-- qui -->
+                    <div class="search">
                         <i class="fas fa-search"></i>
-                        <input  :class="dark == true ? 'dark' : ''" type="text" v-model="search" placeholder="Cerca o inizia una nuova chat" >
-                        <!-- qui -->
+                        <input type="text" v-model="search" placeholder="Cerca o inizia una nuova chat" >
                     </div>
                 </div>
-                <div  :class="dark == true ? 'dark' : ''" class="chat-list ">
-                    <!-- qui -->
-                    <div  :class="dark == true ? 'dark' : ''" v-for="(chat, index) in filteredChats "@click="i = index" :class=" index == i ? 'active' : '' " class="list-item ">
-                        <!-- qui -->
+                <div class="chat-list">
+                    <div v-for="(chat, index) in filteredChats "@click="i = index" :class=" index == i ? 'active' : '' " class="list-item">
                         <img :src="'img/' + chat.contact.img" alt="">
                         <div class="text-sec">
                             <div>{{chat.contact.name}}</div>
@@ -60,8 +54,7 @@
 <!-- sezione chat aperta -->
 
             <div class="open-chat">
-                <div  :class="dark == true ? 'dark' : ''" class="contact ">
-                    <!-- qui -->
+                <div class="contact">
                     <img :src="'img/' + chats[i].contact.img" alt="">
                     <div class="info">
                         <div>{{chats[i].contact.name}}</div>
@@ -71,31 +64,21 @@
                     <i class="fas fa-paperclip"></i>
                     <i class="fas fa-ellipsis-v"></i>
                 </div>
-                <div :style="dark == true ? 'background: url(img/mine_dark.png); background-size: contain;' : 'background: url(img/mine.jpg);' "class="messages">
-                    <div v-if ="dark == false" id="message" v-for="(message, index) in chats[i].messages"  :class="message.sent == true ? 'sent' : 'received'" >{{message.text}}
+                <div class="messages">
+                    <div id="message" v-for="(message, index) in chats[i].messages" :class="message.sent == true ? 'sent' : 'received'">{{message.text}}
                         <div class="hour">{{message.date}}</div>
                         <i @click="message.clicked = true " class="fas fa-chevron-down"></i>
-                        <div :class="message.clicked == true ? 'showed' : ''"  class="dropdown-menu">
-                            <div class="btn" @click="deleteMessage(index)" >Cancella messaggio</div>
-                            <div @click="message.clicked = false">Info messaggio</div>
-                        </div>
-                    </div>
-
-                    <div v-else id="message" v-for="(message, index) in chats[i].messages"  :class="message.sent == true ? 'sent-dark' : 'received-dark'" >{{message.text}}
-                        <div class="hour">{{message.date}}</div>
-                        <i @click="message.clicked = true " class="fas fa-chevron-down"></i>
-                        <div :class="message.clicked == true ? 'showed' : ''"  class="dropdown-menu">
+                        <div :class="message.clicked == true ? 'showed' : ''"class="dropdown-menu">
                             <div class="btn" @click="deleteMessage(index)" >Cancella messaggio</div>
                             <div @click="message.clicked = false">Info messaggio</div>
                         </div>
                     </div>
                 </div>
-                <div  :class="dark == true ? 'dark' : ''" class="input-message ">
-                    <!-- qui -->
+                <div class="input-message">
                     <i class="far fa-smile"></i>
-                    <input  :class="dark == true ? 'dark' : ''" @keyup.enter="addMessage" v-model="newMessage.text" type="text" placeholder="Scrivi un messaggio" >
-                    <!-- qui -->
-                    <i  class="fas fa-microphone"></i>
+                    <input @keyup.enter="addMessage" v-model="newMessage.text" type="text" placeholder="Scrivi un messaggio" >
+                    <i v-if= "newMessage.text == ''" class="fas fa-microphone"></i>
+                    <i v-else @click="addMessage" style="font-size: 1rem;"class="fas fa-paper-plane"></i>
                 </div>
             </div>
         </div>

@@ -20,7 +20,7 @@ let app = new Vue({
         chats : [
             {
                 contact : {
-                    name : 'Michele',
+                    name : 'Tony',
                     img: 'avatar_1.jpg',
                 },
                 messages : [
@@ -242,12 +242,15 @@ let app = new Vue({
             this.chats[this.i].messages.splice(index, 1)
         },
         toggleDark(){
+            let rootDark = document.querySelector('#root-dark')
             if(this.dark == true){
                 this.dark = false
+                rootDark.classList.remove('dark')
             } else{
                 this.dark = true
+                rootDark.classList.add('dark')
             }
-        }
+        },
     
     },
     computed:{

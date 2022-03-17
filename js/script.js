@@ -227,9 +227,10 @@ let app = new Vue({
     },
     methods : {
         addMessage(){
-            if(this.newMessage != ''){
+            if(this.newMessage.text.trim() != ''){
                 this.chats[this.i].messages.push(this.newMessage)
-                setTimeout(() => {this.chats[this.i].messages.push({text : this.arrAnsware[this.randomAnsware()],sent : false, clicked : false, date : luxon.DateTime.now().toFormat('HH:mm')})}, 1000);}
+                index = this.i
+                setTimeout((index) => {this.chats[index].messages.push({text : this.arrAnsware[this.randomAnsware()],sent : false, clicked : false, date : luxon.DateTime.now().toFormat('HH:mm')})}, 1000);}
             this.newMessage = {text : '',sent : true, clicked : false,date : luxon.DateTime.now().toFormat('HH:mm')}
         },
         randomAnsware(){
@@ -247,5 +248,8 @@ let app = new Vue({
                 return chat.contact.name.toLowerCase().includes(this.search.toLowerCase())
             })
         }
-    }
+    },
+    // created(){
+    //     set
+    // }
 })

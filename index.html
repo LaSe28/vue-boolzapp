@@ -17,8 +17,8 @@
             <div class="left-sec">
                 <div class="my-profile-section">
                     <div class="my-profile">
-                        <img src="img/avatar_8.jpg" alt="">
-                        <div>Mattia</div>
+                        <img :src="'img/' + mainUser.img" alt="">
+                        <div>{{mainUser.name}}</div>
                         <i class="fas fa-circle-notch"></i>
                         <i class="fas fa-comment-alt"></i>
                         <i class="fas fa-ellipsis-v"></i>
@@ -44,7 +44,7 @@
                             <div>{{chat.contact.name}}</div>
                             <p>{{chat.messages[chat.messages.length - 1].text}}...</p>
                         </div>
-                        <div class="hour">{{chat.messages.hour}}</div>
+                        <div class="hour">{{chat.messages[chat.messages.length - 1].date}}</div>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                     <img :src="'img/' + chats[i].contact.img" alt="">
                     <div class="info">
                         <div>{{chats[i].contact.name}}</div>
-                        <p>ultimo accesso oggi alle </p>
+                        <p>ultimo accesso {{chats[i].messages[chats[i].messages.length-1].date}}</p>
                     </div>
                     <i class="fas fa-search"></i>
                     <i class="fas fa-paperclip"></i>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="messages">
                     <div id="message" v-for="(message, index) in chats[i].messages" :class="message.sent == true ? 'sent' : 'received'">{{message.text}}
-                        <div class="hour"></div>
+                        <div class="hour">{{date}}</div>
                         <i @click="message.clicked = true " class="fas fa-chevron-down"></i>
                         <div :class="message.clicked == true ? 'showed' : ''"class="dropdown-menu">
                             <div class="btn" @click="deleteMessage(index)" >Cancella messaggio</div>

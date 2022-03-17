@@ -2,6 +2,7 @@ let app = new Vue({
     el : '#root',
     data: {
         i : 0,
+        dark : false,
         search : '',
         arrAnsware : ['okok', 'seh, usciamo', 'che cosa hai bevuto?', 'ma dove andiamooh', 'ma ci andiamo a divertire!', 'non scrivermi mai più!'],
         newMessage : 
@@ -229,8 +230,8 @@ let app = new Vue({
         addMessage(){
             if(this.newMessage.text.trim() != ''){
                 this.chats[this.i].messages.push(this.newMessage)
-                index = this.i
-                setTimeout((index) => {this.chats[index].messages.push({text : this.arrAnsware[this.randomAnsware()],sent : false, clicked : false, date : luxon.DateTime.now().toFormat('HH:mm')})}, 1000);}
+                const index = this.i
+                setTimeout(() => {this.chats[index].messages.push({text : this.arrAnsware[this.randomAnsware()],sent : false, clicked : false, date : luxon.DateTime.now().toFormat('HH:mm')})}, 1000);}
             this.newMessage = {text : '',sent : true, clicked : false,date : luxon.DateTime.now().toFormat('HH:mm')}
         },
         randomAnsware(){
@@ -240,6 +241,13 @@ let app = new Vue({
         deleteMessage(index){
             this.chats[this.i].messages.splice(index, 1)
         },
+        toggleDark(){
+            if(this.dark == true){
+                this.dark = false
+            } else{
+                this.dark = true
+            }
+        }
     
     },
     computed:{
@@ -249,7 +257,4 @@ let app = new Vue({
             })
         }
     },
-    // created(){
-    //     set
-    // }
 })

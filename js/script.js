@@ -2,7 +2,7 @@ let app = new Vue({
     el : '#root',
     data: {
         i : 0,
-        search : ''.toLocaleLowerCase(),
+        search : '',
         arrAnsware : ['okok', 'seh, usciamo', 'che cosa hai bevuto?', 'ma dove andiamooh', 'ma ci andiamo a divertire!', 'non scrivermi mai più!'],
         newMessage : 
         {
@@ -238,12 +238,13 @@ let app = new Vue({
         },
         deleteMessage(index){
             this.chats[this.i].messages.splice(index, 1)
-        }
+        },
+    
     },
     computed:{
         filteredChats: function(){
             return this.chats.filter((chat) => {
-                return chat.contact.name.includes(this.search)
+                return chat.contact.name.toLowerCase().includes(this.search.toLowerCase())
             })
         }
     }

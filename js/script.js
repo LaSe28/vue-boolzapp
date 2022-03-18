@@ -10,8 +10,7 @@ let app = new Vue({
             text : '',
             sent : true,
             clicked : false,
-            date : luxon.DateTime.now().toFormat('HH:mm')
-
+            date : null
         },
         mainUser:{
             name: 'Mattia',
@@ -28,31 +27,31 @@ let app = new Vue({
                         text : 'ciao',
                         sent : false,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-17T09:10:00').toFormat('HH:mm')
+                        date : '2022-03-17T09:10'
                     },
                     {
                         text : 'hai la macchina stasera?',
                         sent : false,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-17T09:12:00').toFormat('HH:mm')
+                        date : '2022-03-17T09:12'
                     },
                     {
                         text : 'ti serve un passaggio?',
                         sent : true,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-17T09:14:00').toFormat('HH:mm')
+                        date : '2022-03-17T09:14'
                     },
                     {
                         text : 'si',
                         sent : false,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-17T09:15:00').toFormat('HH:mm')
+                        date : '2022-03-17T09:15'
                     },
                     {
                         text : 'allora no',
                         sent : true,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-17T09:17:00').toFormat('HH:mm')
+                        date : '2022-03-17T09:17'
                     }
                 ],
 
@@ -67,13 +66,13 @@ let app = new Vue({
                         text : 'Teleciamaragno chiama ragno, ragno rispondi',
                         sent : true,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-17T08:30:00').toFormat('HH:mm')
+                        date : '2022-03-17T08:30'
                     },
                     {
                         text : 'sei ubriaco?',
                         sent : false,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-17T08:37:00').toFormat('HH:mm')
+                        date : '2022-03-17T08:37'
                     }
                 ],
 
@@ -88,13 +87,13 @@ let app = new Vue({
                         text : 'ei',
                         sent : true,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-17T06:30:00').toFormat('HH:mm')
+                        date : '2022-03-17T06:30'
                     },
                     {
                         text : 'ciao dimmi',
                         sent : false,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-17T06:32:00').toFormat('HH:mm')
+                        date : '2022-03-17T06:32'
 
                     }
                 ],
@@ -110,13 +109,13 @@ let app = new Vue({
                         text : 'tutto bene?',
                         sent : true,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-16T10:00:00').toRelativeCalendar(),
+                        date : '2022-03-16T10:10',
                     },
                     {
                         text : 'insomma',
                         sent : false,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-16T10:00:00').toRelativeCalendar(),
+                        date : '2022-03-16T10:34',
                     }
                 ],
 
@@ -131,26 +130,26 @@ let app = new Vue({
                         text : 'ciao',
                         sent : true,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-16T10:00:00').toRelativeCalendar(),
+                        date : '2022-03-16T06:43',
                     },
                     {
                         text : 'come stai?',
                         sent : false,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-16T10:00:00').toRelativeCalendar(),
+                        date : '2022-03-16T06:50',
                     },
                     {
                         text : 'abbastanza bene dai, tu?',
                         sent : true,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-16T10:00:00').toRelativeCalendar(),
+                        date : '2022-03-16T07:23',
 
                     },
                     {
                         text : 'anche io grazie',
                         sent : false,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-16T10:00:00').toRelativeCalendar(),
+                        date : '2022-03-16T07:24',
 
                     },
                 ],
@@ -166,13 +165,13 @@ let app = new Vue({
                         text : 'faccio un po di ritardo a lavoro',
                         sent : false,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-16T10:00:00').toRelativeCalendar(),
+                        date : '2022-03-16T07:07',
                     },
                     {
                         text : 'strano',
                         sent : true,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-16T10:00:00').toRelativeCalendar(),
+                        date : '2022-03-16T07:10',
                     }
                 ],
 
@@ -187,19 +186,19 @@ let app = new Vue({
                         text : 'hola',
                         sent : false,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-15').toRelativeCalendar(),
+                        date : '2022-03-15T05:42',
                     },
                     {
                         text : 'amigo',
                         sent : false,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-15').toRelativeCalendar(),
+                        date : '2022-03-15T05:42',
                     },
                     {
                         text: 'chi sei?',
                         sent: true,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-15T10:00:00').toRelativeCalendar(),
+                        date : '2022-03-15T06:45',
                     }
                 ],
             },
@@ -213,13 +212,13 @@ let app = new Vue({
                         text : 'ciao',
                         sent : true,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-15').toRelativeCalendar(),
+                        date : '2022-03-15',
                     },
                     {
                         text : 'ehila',
                         sent : false,
                         clicked : false,
-                        date : luxon.DateTime.fromISO('2022-03-15').toRelativeCalendar(),
+                        date : '2022-03-15',
                     }
                 ],
             },
@@ -229,6 +228,7 @@ let app = new Vue({
     methods : {
         addMessage(){
             if(this.newMessage.text.trim() != ''){
+                this.newMessage.date = luxon.DateTime.now().toFormat('HH:mm')
                 this.chats[this.i].messages.push(this.newMessage)
                 const index = this.i
                 setTimeout(() => {this.chats[index].messages.push({text : this.arrAnsware[this.randomAnsware()],sent : false, clicked : false, date : luxon.DateTime.now().toFormat('HH:mm')})}, 1000);}
@@ -251,6 +251,10 @@ let app = new Vue({
                 rootDark.classList.add('dark')
             }
         },
+        getFormattedDate(date){
+            let formatStr = 'dd/MM/yyyy HH:mm'
+            return luxon.DateTime.fromISO(date).toFormat(formatStr)
+        }
     
     },
     computed:{

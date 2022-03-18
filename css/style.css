@@ -35,6 +35,10 @@ html{
     overflow: hidden;
 }
 
+.hidden{
+    display: none;
+}
+
 /* sezione di sinisra con chat list */
 
 .left-sec{

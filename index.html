@@ -59,7 +59,7 @@
                     <img :src="'img/' + chats[i].contact.img" alt="">
                     <div class="info">
                         <div>{{chats[i].contact.name}}</div>
-                        <p>ultimo accesso il {{getFormattedDate(chats[i].messages[chats[i].messages.length-1].date)}}</p>
+                        <p v-if="chats[i].messages.length != 0">ultimo accesso il {{getFormattedDate(chats[i].messages[chats[i].messages.length-1].date)}}</p>
                     </div>
                     <i class="fas fa-search"></i>
                     <i class="fas fa-paperclip"></i>
